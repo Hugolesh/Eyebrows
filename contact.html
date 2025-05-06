@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>יצירת קשר | עיצוב גבות</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=200&h=200&q=80" alt="לוגו עיצוב גבות" class="logo">
+    <h1>עיצוב גבות - שם העסק שלך</h1>
+    <nav>
+      <a href="index.html">בית</a>
+      <a href="services.html">שירותים</a>
+      <a href="booking.html">קביעת תור</a>
+      <a href="contact.html" class="active">יצירת קשר</a>
+      <a href="accessibility.html">הצהרת נגישות</a>
+    </nav>
+  </header>
+  <main>
+    <div class="section-title">יצירת קשר</div>
+    <form class="contact-form" onsubmit="event.preventDefault();alert('ההודעה נשלחה!');">
+      <label for="name">שם מלא</label>
+      <input type="text" id="name" name="name" placeholder="שם מלא" required>
+      
+      <label for="email">אימייל</label>
+      <input type="email" id="email" name="email" placeholder="אימייל" required>
+      
+      <label for="message">הודעה</label>
+      <textarea id="message" name="message" rows="4" placeholder="הודעה" required></textarea>
+      
+      <button type="submit">שליחה</button>
+    </form>
+    <div class="contact-info">
+      <b>כתובת:</b> רחוב הדוגמה 10, תל אביב<br>
+      <b>טלפון:</b> 050-1234567<br>
+      <b>אימייל:</b> info@eyebrow-design.co.il
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.489921890722!2d34.78176871514515!3d32.0852999811937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4cb9a1e2c8f1%3A0x2a0b7a9a4c8c8b7d!2z15TXkNeR15nXkdeV15XXnSDXqdeZ16jXnNeV15nXkQ!5e0!3m2!1siw!2sil!4v1683381234567!5m2!1siw!2sil" allowfullscreen="" loading="lazy" title="מפה"></iframe>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=500&q=80" alt="עיצוב גבות" style="width:220px; border-radius:14px; box-shadow:0 2px 8px #e5b5b5;">
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 עיצוב גבות - שם העסק שלך. כל הזכויות שמורות.
+  </footer>
+  <!-- התחלת תוסף נגישות Enable -->
+  <script>(function(d){var s = d.createElement("script");s.src = "https://cdn.equalweb.com/accessibility/accessibility.js";s.setAttribute("data-equalweb", "true");d.head.appendChild(s);})(document);</script>
+  <!-- סיום תוסף נגישות Enable -->
+</body>
+</html>

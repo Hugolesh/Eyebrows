@@ -1,0 +1,4 @@
+git add .
+git commit -m "הודעה על השינוי"
+git pull origin main --allow-unrelated-histories
+git push

@@ -5,6 +5,7 @@
   <title>Meshie Eyebrows - אתר בבנייה</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* כל ה-CSS שלך כאן */
     body {
       font-family: Arial, 'Heebo', sans-serif;
       background: linear-gradient(120deg, #fff8f0 0%, #ffe0e9 100%);
@@ -25,12 +26,11 @@
       margin: 40px 0;
     }
     .logo {
-      width: 260px; /* שים כאן את הגודל הרצוי */
+      width: 260px;
       display: block;
       margin: 0 auto 24px auto;
       box-shadow: 0 2px 8px #e5b5b5;
       background: #fff;
-      /* אין border-radius, כך שהתמונה לא תהיה עגולה */
     }
     h1 {
       color: #e05a5a;
@@ -59,13 +59,20 @@
       .logo { width: 120px; }
     }
   </style>
+  <script>
+    // בדוק אם יש קוד סודי ב-URL
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('dev') === '22707996') { // שנה את '1234' לקוד הסודי שלך
+      window.location.href = 'dev.html';
+    }
+  </script>
 </head>
 <body>
   <div class="container">
     <img class="logo" src="images/Meshi_eyebrows_logo.jpg" alt="לוגו Meshie Eyebrows">
     <h1>אתר בבנייה</h1>
     <p>
-      נמצא כרגע בבנייה <b>Meshi Eyebrows</b> האתר שלנו.<br>
+      האתר שלנו <b>Meshi Eyebrows</b> נמצא כרגע בבנייה.<br>
       נשמח לראותך כאן בקרוב!
     </p>
     <div class="contact">

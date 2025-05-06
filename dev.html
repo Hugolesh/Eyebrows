@@ -5,10 +5,49 @@
   <title>עיצוב גבות - Meshie Eyebrows</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* עיצוב ללוגו רוחבי וקבוע */
+    .logo-bar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: 100vw;
+      height: 90px;
+      background: #fff;
+      box-shadow: 0 2px 16px #f3d3d3;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-bar img {
+      height: 70px;
+      max-width: 90vw;
+      object-fit: contain;
+    }
+    .main-header, main, footer {
+      margin-top: 110px; /* מרווח מתחת ללוגו הקבוע */
+    }
+    @media (max-width: 600px) {
+      .logo-bar {
+        height: 60px;
+      }
+      .logo-bar img {
+        height: 44px;
+      }
+      .main-header, main, footer {
+        margin-top: 70px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- לוגו קבוע בראש הדף -->
+  <div class="logo-bar">
+    <img src="images/Meshi_eyebrows_logo.jpg" alt="לוגו Meshie Eyebrows">
+  </div>
   <header class="main-header">
-    <img src="images/Meshi_eyebrows_logo.jpg" alt="לוגו Meshie Eyebrows" class="logo">
     <h1>עיצוב גבות - Meshie Eyebrows</h1>
     <nav>
       <a href="dev.html" class="active">בית</a>

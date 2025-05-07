@@ -14,22 +14,38 @@
       background: #fff8f0;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       padding: 6px 0;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       z-index: 1000;
     }
     main {
-      padding-top: 140px;
+      padding-top: 180px;
     }
     .logo {
       max-height: 100px;
       width: auto;
     }
     nav {
-      margin-top: 8px;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
     nav a {
-      display: inline-block;
-      margin: 0 12px;
+      color: #e05a5a;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05em;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s, color 0.2s;
+    }
+    nav a.active,
+    nav a:hover {
+      color: #b23a48;
+      border-bottom: 2px solid #e05a5a;
     }
   </style>
 </head>
@@ -37,11 +53,11 @@
   <header>
     <img src="images/Meshi_eyebrows_logo.png" alt="לוגו Meshi Eyebrows" class="logo">
     <nav>
-      <a href="index.html">בית</a>
-      <a href="services.html">שירותים</a>
-      <a href="booking.html">קביעת תור</a>
-      <a href="contact.html" class="active">יצירת קשר</a>
       <a href="accessibility.html">הצהרת נגישות</a>
+      <a href="contact.html" class="active">יצירת קשר</a>
+      <a href="booking.html">קביעת תור</a>
+      <a href="services.html">שירותים</a>
+      <a href="index.html">בית</a>
     </nav>
   </header>
 

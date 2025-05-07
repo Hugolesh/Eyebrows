@@ -135,6 +135,12 @@ nav a:hover {
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 1px 8px #f3d3d3;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
 }
 
 .cta-btn {
@@ -178,4 +184,38 @@ footer {
   .gallery {
     gap: 8px;
   }
+}
+
+/* שיפור עיצוב טופס יצירת קשר */
+.contact-form label {
+  display: block;
+  margin-top: 16px;
+  font-weight: bold;
+  color: #b23a48;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 6px;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  margin-top: 18px;
+  padding: 12px;
+  background: #e05a5a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #b23a48;
 }

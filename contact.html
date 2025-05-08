@@ -6,105 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #fff8f0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 6px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 1000;
-    }
-    main {
-      padding-top: 180px;
-    }
-    .logo {
-      max-height: 100px;
-      width: auto;
-    }
-    nav {
-      margin-top: 6px;
-      display: flex;
-      flex-direction: row-reverse;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-    nav a {
-      color: #e05a5a;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.05em;
-      border-bottom: 2px solid transparent;
-      transition: border 0.2s, color 0.2s;
-    }
-    nav a.active,
-    nav a:hover {
-      color: #b23a48;
-      border-bottom: 2px solid #e05a5a;
-    }
-    .contact-launch {
-      margin: 40px auto;
-      text-align: center;
-    }
-    .contact-launch button {
-      background-color: #e05a5a;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      padding: 14px 28px;
-      font-size: 1.2em;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .contact-launch button:hover {
-      background-color: #b23a48;
-    }
-    .contact-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 40px 24px;
-      border-radius: 18px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.5);
-      z-index: 2000;
-      max-width: 400px;
-      width: 90%;
-    }
-    .popup-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: 1500;
-    }
-    .close-popup {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: #e05a5a;
-    }
     .form-message {
       text-align: center;
       margin-top: 12px;
       font-size: 1em;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 95%;
+      margin-inline: auto;
     }
-    .form-message.success { color: green; }
-    .form-message.error { color: red; }
+    .form-message.success {
+      background-color: #e0fbe3;
+      color: #2e7d32;
+      border: 1px solid #a5d6a7;
+    }
+    .form-message.error {
+      background-color: #fdecea;
+      color: #b71c1c;
+      border: 1px solid #ef9a9a;
+    }
+    .contact-popup button[type="submit"] {
+      display: block;
+      margin: 12px auto 0 auto;
+      background: linear-gradient(90deg, #e05a5a 0%, #ff8a65 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .contact-popup button[type="submit"]:hover {
+      background: linear-gradient(90deg, #d24e4e 0%, #ff7043 100%);
+      transform: scale(1.04);
+    }
   </style>
 </head>
 <body>
@@ -119,7 +59,7 @@
     </nav>
   </header>
 
-  <main>
+  <main style="padding-top: 180px;">
     <div class="section-title" style="text-align:center;color:#d44c4c;">
       <span dir="rtl" style="display:inline-block; unicode-bidi:isolate;">
         רוצה לשמוע על השירותים שלנו או לקבוע תור? אין בעיה!
@@ -131,7 +71,7 @@
       </span>
     </div>
 
-    <div class="contact-launch">
+    <div class="contact-launch" style="text-align: center; margin: 40px 0;">
       <button id="openContactPopup">טופס יצירת קשר</button>
     </div>
 
@@ -144,14 +84,15 @@
       </a>
     </div>
 
-    <div class="popup-overlay"></div>
-    <div class="contact-popup">
-      <button class="close-popup" id="closeContactPopup">×</button>
+    <div class="popup-overlay" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index:1500;"></div>
+
+    <div class="contact-popup" style="display: none; position: fixed; top:50%; left:50%; transform: translate(-50%, -50%); background: white; padding: 40px 24px; border-radius: 18px; box-shadow: 0 0 30px rgba(0,0,0,0.5); z-index: 2000; max-width: 400px; width: 90%;">
+      <button class="close-popup" id="closeContactPopup" style="position: absolute; top: 12px; left: 12px; background: none; border: none; font-size: 24px; cursor: pointer; color: #e05a5a;">×</button>
       <form id="contactForm" action="https://formspree.io/f/xqaqbjor" method="POST">
         <input type="text" name="name" placeholder="שם מלא" required style="width:100%;margin:10px 0;padding:10px;">
         <input type="text" name="phone" placeholder="טלפון נייד" required style="width:100%;margin:10px 0;padding:10px;">
-        <textarea name="message" placeholder="נושא הפנייה" rows="4" style="width:100%;margin:10px 0;padding:10px;" required></textarea>
-        <button type="submit" style="background:#e05a5a;color:white;border:none;padding:12px 24px;border-radius:10px;cursor:pointer;">שליחה</button>
+        <textarea name="message" placeholder="נושא הפנייה" rows="4" required style="width:100%;margin:10px 0;padding:10px;"></textarea>
+        <button type="submit">שליחה</button>
         <div id="formMessage" class="form-message"></div>
       </form>
     </div>
@@ -199,8 +140,7 @@
     };
   </script>
 
-  <!-- התחלת תוסף נגישות Enable -->
+  <!-- תוסף נגישות -->
   <script>(function(d){var s = d.createElement("script");s.src = "https://cdn.equalweb.com/accessibility/accessibility.js";s.setAttribute("data-equalweb", "true");d.head.appendChild(s);})(document);</script>
-  <!-- סיום תוסף נגישות Enable -->
 </body>
 </html>

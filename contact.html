@@ -115,16 +115,16 @@
   <main>
     <div class="section-title"><span dir="rtl" style="display:inline-block; unicode-bidi:isolate;">רוצה לשמוע על השירותים שלנו או לקבוע תור? אין בעיה!</span></div>
     <div style="text-align:center; margin-top: 10px; font-size: 1.2em;">
-      הנה דרכי ההתקשרות איתנו:
+      <span dir="rtl" style="display:inline-block; unicode-bidi:isolate;">הנה דרכי ההתקשרות איתנו:</span>
     </div>
 
     <div class="contact-launch">
-      <button onclick="document.querySelector('.popup-overlay').style.display='block';document.querySelector('.contact-popup').style.display='block';">
+      <button id="openContactPopup">
         טופס יצירת קשר
       </button>
     </div>
 
-    <div style="text-align:center; font-size: 1.1em; margin-bottom: 10px;">ליצירת קשר בוואטספ:</div>
+    <div style="text-align:center; font-size: 1.1em; margin-bottom: 10px;"><span dir="rtl" style="display:inline-block; unicode-bidi:isolate;">ליצירת קשר בוואטספ:</span></div>
     <div style="text-align:center;">
       <a href="https://wa.me/+972547649019" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="וואטסאפ" style="width:48px;height:48px;">
@@ -133,7 +133,7 @@
 
     <div class="popup-overlay" onclick="this.style.display='none';document.querySelector('.contact-popup').style.display='none';"></div>
     <div class="contact-popup">
-      <button class="close-popup" onclick="document.querySelector('.popup-overlay').style.display='none';document.querySelector('.contact-popup').style.display='none';">×</button>
+      <button class="close-popup" id="closeContactPopup">×</button>
       <p style="text-align:right;font-size:1.1em;margin-bottom:8px;"><span dir="rtl" style="display:inline-block; unicode-bidi:isolate;">מעוניינת בפרטים נוספים? צרי איתנו קשר:</span></p>
       <p style="text-align:right; direction: rtl;">טלפון: <span style="color:#e05a5a;">054-7649019</span></p>
       <form action="https://formspree.io/f/yourformid" method="POST">
@@ -152,5 +152,21 @@
   <!-- התחלת תוסף נגישות Enable -->
   <script>(function(d){var s = d.createElement("script");s.src = "https://cdn.equalweb.com/accessibility/accessibility.js";s.setAttribute("data-equalweb", "true");d.head.appendChild(s);})(document);</script>
   <!-- סיום תוסף נגישות Enable -->
+<script>
+  document.getElementById("openContactPopup").onclick = function () {
+    document.querySelector(".popup-overlay").style.display = "block";
+    document.querySelector(".contact-popup").style.display = "block";
+  };
+
+  document.getElementById("closeContactPopup").onclick = function () {
+    document.querySelector(".popup-overlay").style.display = "none";
+    document.querySelector(".contact-popup").style.display = "none";
+  };
+
+  document.querySelector(".popup-overlay").onclick = function () {
+    this.style.display = "none";
+    document.querySelector(".contact-popup").style.display = "none";
+  };
+</script>
 </body>
 </html>
